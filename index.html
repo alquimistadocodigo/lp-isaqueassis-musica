@@ -78,11 +78,9 @@
       0% {
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
       }
-
       70% {
         box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
       }
-
       100% {
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
       }
@@ -94,40 +92,86 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-color: #1a202c;
-      /* Cor de fallback caso a imagem não carregue */
+      background-color: #1a202c; /* Cor de fallback caso a imagem não carregue */
+    }
+
+    /* --- ESTILOS PARA A SEÇÃO DIFERENCIAIS (MOVIDO PARA CÁ) --- */
+    :root {
+      --cor-principal: #a96631;
+      --cor-fundo-diferenciais: #c9b4a6;
+      --cor-texto-diferenciais: #4a4545;
+      --cor-branco: #ffffff;
+      --sombra-card: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+    .diferenciais-eventos {
+      background-color: var(--cor-fundo-diferenciais);
+      padding: 60px 0;
+    }
+    .diferenciais-container {
+      width: 92%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .layout-principal {
+      display: flex;
+      gap: 48px;
+      align-items: flex-start;
+    }
+    .coluna-diferenciais { flex: 1.5; min-width: 0; }
+    .coluna-eventos { flex: 1; min-width: 0; }
+    .titulo-secao-diferenciais {
+      margin: 0 0 28px;
+      font-size: 32px;
+      color: var(--cor-branco);
+      text-align: center;
+      font-weight: 700;
+    }
+    .lista-diferenciais { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px; }
+    .card-diferencial { background: var(--cor-branco); padding: 20px; border-radius: 14px; box-shadow: var(--sombra-card); }
+    .card-diferencial-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .card-diferencial-icone { font-size: 22px; }
+    .card-diferencial-titulo { margin: 0; color: var(--cor-principal); font-size: 18px; font-weight: 700; }
+    .card-diferencial-texto { margin: 0; color: var(--cor-texto-diferenciais); line-height: 1.5; font-size: 14px; }
+    .grid-eventos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .item-evento { text-align: center; }
+    .item-evento-icone { width: 100px; height: 100px; margin: 0 auto; background: var(--cor-branco); border-radius: 50%; box-shadow: var(--sombra-card); display: flex; justify-content: center; align-items: center; font-size: 30px; color: var(--cor-principal); }
+    .item-evento-label { margin-top: 12px; color: var(--cor-branco); font-size: 14px; line-height: 1.35; }
+
+    @media (max-width: 992px) {
+      .layout-principal { flex-direction: column; gap: 40px; }
+      .titulo-secao-diferenciais { font-size: 28px; }
+    }
+    @media (max-width: 480px) {
+      .grid-eventos { gap: 16px; }
+      .item-evento-icone { width: 80px; height: 80px; font-size: 26px; }
     }
   </style>
 </head>
 
 <body class="bg-gray-50">
+
   <a href="https://wa.me/5521964315534?text=Olá%20Isaque,%20quero%20um%20orçamento%20para%20meu%20evento!" class="whatsapp-float fixed bottom-8 right-8 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl z-50 shadow-lg hover:bg-green-600 transition-colors">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <header class="hero relative h-screen flex items-start justify-center overflow-hidden">
     <div class="absolute inset-0 bg-black opacity-10"></div>
-
     <div class="container mx-auto px-6 relative z-10 text-center pt-[57vh]">
       <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in-down" style="text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);">
         Isaque Assis
       </h1>
-
       <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto animate-fade-in-up" style="text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);">
         Música ao vivo no RJ: cantor voz e violão <br>e voz e teclado para eventos, festas e casamentos.
       </p>
-
       <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in">
         <a href="#shows" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition-all transform hover:scale-105">
           Conheça meus shows
         </a>
-
         <a href="#contato" class="bg-transparent border-2 border-white hover:bg-white hover:text-purple-900 text-white font-semibold py-3 px-8 rounded-full transition-all transform hover:scale-105">
           Solicitar orçamento
         </a>
       </div>
     </div>
-
     <div class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
       <a href="#sobre" class="text-white text-3xl">
         <i class="fas fa-chevron-down"></i>
@@ -142,12 +186,10 @@
           <i class="fas fa-user text-blue-500 mr-3"></i>Sobre Isaque Assis
         </h2>
       </div>
-
       <div class="flex flex-col lg:flex-row items-center gap-12">
         <div class="lg:w-1/2">
           <img src="https://ik.imagekit.io/4f8egcxn0/Foto%20Perfil%20Viola%CC%83o%20e%20Voz%202025-min.jpg?updatedAt=1754773052249" alt="Isaque Assis cantando em um show" class="rounded-lg shadow-xl w-full h-auto object-cover" loading="lazy" width="800" height="533">
         </div>
-
         <div class="lg:w-1/2">
           <h3 class="text-2xl font-bold text-gray-800 mb-6">Versatilidade e conexão com o público</h3>
           <p class="text-gray-600 mb-6 leading-relaxed">
@@ -163,243 +205,82 @@
     </div>
   </section>
 
-  <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diferenciais e Eventos</title>
-    <style>
-        /* --- GERAL E VARIÁVEIS --- */
-        :root {
-            --cor-principal: #a96631;
-            --cor-fundo: #c9b4a6;
-            --cor-texto: #4a4545;
-            --cor-branco: #ffffff;
-            --sombra-card: 0 8px 20px rgba(0, 0, 0, 0.12);
-        }
-
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            margin: 0;
-        }
-
-        /* --- ESTRUTURA DA SEÇÃO --- */
-        .diferenciais-eventos {
-            background-color: var(--cor-fundo);
-            padding: 60px 0;
-        }
-
-        .container {
-            width: 92%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .layout-principal {
-            display: flex;
-            gap: 48px; /* Espaçamento entre as colunas */
-            align-items: flex-start;
-        }
-
-        .coluna-diferenciais {
-            flex: 1.5; /* Ocupa um pouco mais de espaço */
-            min-width: 0;
-        }
-
-        .coluna-eventos {
-            flex: 1; /* Ocupa menos espaço */
-            min-width: 0;
-        }
-
-        .titulo-secao {
-            margin: 0 0 28px;
-            font-size: 32px;
-            color: var(--cor-branco);
-            text-align: center;
-            font-weight: 700;
-        }
-
-        /* --- COMPONENTES DA COLUNA "DIFERENCIAIS" --- */
-        .lista-diferenciais {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 18px; /* Espaço entre os cards */
-        }
-
-        .card-diferencial {
-            background: var(--cor-branco);
-            padding: 20px;
-            border-radius: 14px;
-            box-shadow: var(--sombra-card);
-        }
-
-        .card-diferencial-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .card-diferencial-icone {
-            font-size: 22px;
-        }
-
-        .card-diferencial-titulo {
-            margin: 0;
-            color: var(--cor-principal);
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .card-diferencial-texto {
-            margin: 0;
-            color: var(--cor-texto);
-            line-height: 1.5;
-            font-size: 14px;
-        }
-
-        /* --- COMPONENTES DA COLUNA "EVENTOS" --- */
-        .grid-eventos {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 colunas de tamanho igual */
-            gap: 24px;
-        }
-
-        .item-evento {
-            text-align: center;
-        }
-
-        .item-evento-icone {
-            width: 100px; /* Tamanho fixo para o círculo */
-            height: 100px;
-            margin: 0 auto;
-            background: var(--cor-branco);
-            border-radius: 50%; /* Garante um círculo perfeito */
-            box-shadow: var(--sombra-card);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 30px;
-            color: var(--cor-principal);
-        }
-
-        .item-evento-label {
-            margin-top: 12px;
-            color: var(--cor-branco);
-            font-size: 14px;
-            line-height: 1.35;
-        }
-
-        /* --- RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS --- */
-        @media (max-width: 992px) {
-            .layout-principal {
-                flex-direction: column; /* Colunas ficam uma sobre a outra */
-                gap: 40px;
-            }
-
-            .titulo-secao {
-                font-size: 28px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .grid-eventos {
-                gap: 16px;
-            }
-
-            .item-evento-icone {
-                width: 80px;
-                height: 80px;
-                font-size: 26px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <section id="diferenciais-eventos" class="diferenciais-eventos">
-        <div class="container">
-            <div class="layout-principal">
-
-                <div class="coluna-diferenciais">
-                    <h2 class="titulo-secao">MEUS DIFERENCIAIS</h2>
-                    <ul class="lista-diferenciais">
-                        <li>
-                            <div class="card-diferencial">
-                                <div class="card-diferencial-header">
-                                    <div class="card-diferencial-icone">🎵</div>
-                                    <h3 class="card-diferencial-titulo">REPERTÓRIO FEITO PARA VOCÊ</h3>
-                                </div>
-                                <p class="card-diferencial-texto">
-                                    Nenhum evento é igual ao outro — por isso, sua trilha sonora também merece ser única. Crio um repertório alinhado ao seu gosto e ao clima que deseja transmitir, transformando cada momento em pura emoção.
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="card-diferencial">
-                                <div class="card-diferencial-header">
-                                    <div class="card-diferencial-icone">🎸</div>
-                                    <h3 class="card-diferencial-titulo">SOM IMPECÁVEL</h3>
-                                </div>
-                                <p class="card-diferencial-texto">
-                                    Levo equipamentos profissionais de alto nível, prontos para garantir um som cristalino do início ao fim. Você só precisa aproveitar o momento — sem se preocupar com aluguel ou falhas técnicas.
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="card-diferencial">
-                                <div class="card-diferencial-header">
-                                    <div class="card-diferencial-icone">💳</div>
-                                    <h3 class="card-diferencial-titulo">PLANOS FLEXÍVEIS</h3>
-                                </div>
-                                <p class="card-diferencial-texto">
-                                    Do formato mais simples ao mais completo, ajusto tudo para que caiba no seu orçamento e no seu sonho. No pacote premium, ainda ofereço bônus exclusivos que tornam sua celebração memorável.
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="card-diferencial">
-                                <div class="card-diferencial-header">
-                                    <div class="card-diferencial-icone">⭐</div>
-                                    <h3 class="card-diferencial-titulo">QUASE 20 ANOS DE PALCO</h3>
-                                </div>
-                                <p class="card-diferencial-texto">
-                                    Há quase 20 anos me dedico à música ao vivo, levando canções e boas lembranças a diferentes eventos e públicos.
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
+  <section id="diferenciais-eventos" class="diferenciais-eventos">
+    <div class="diferenciais-container">
+      <div class="layout-principal">
+        <div class="coluna-diferenciais">
+          <h2 class="titulo-secao-diferenciais">MEUS DIFERENCIAIS</h2>
+          <ul class="lista-diferenciais">
+            <li>
+              <div class="card-diferencial">
+                <div class="card-diferencial-header">
+                  <div class="card-diferencial-icone">🎵</div>
+                  <h3 class="card-diferencial-titulo">REPERTÓRIO FEITO PARA VOCÊ</h3>
                 </div>
-
-                <div class="coluna-eventos">
-                    <h2 class="titulo-secao">EVENTOS</h2>
-                    <div class="grid-eventos">
-                        <div class="item-evento">
-                            <div class="item-evento-icone">🎂</div>
-                            <p class="item-evento-label">Aniversários</p>
-                        </div>
-                        <div class="item-evento">
-                            <div class="item-evento-icone">💼</div>
-                            <p class="item-evento-label">Eventos corporativos</p>
-                        </div>
-                        <div class="item-evento">
-                            <div class="item-evento-icone">💖</div>
-                            <p class="item-evento-label">Casamentos e bodas</p>
-                        </div>
-                        <div class="item-evento">
-                            <div class="item-evento-icone">👶</div>
-                            <p class="item-evento-label">Chás de bebê e revelação</p>
-                        </div>
-                    </div>
+                <p class="card-diferencial-texto">
+                  Nenhum evento é igual ao outro — por isso, sua trilha sonora também merece ser única. Crio um repertório alinhado ao seu gosto e ao clima que deseja transmitir, transformando cada momento em pura emoção.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="card-diferencial">
+                <div class="card-diferencial-header">
+                  <div class="card-diferencial-icone">🎸</div>
+                  <h3 class="card-diferencial-titulo">SOM IMPECÁVEL</h3>
                 </div>
-
-            </div>
+                <p class="card-diferencial-texto">
+                  Levo equipamentos profissionais de alto nível, prontos para garantir um som cristalino do início ao fim. Você só precisa aproveitar o momento — sem se preocupar com aluguel ou falhas técnicas.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="card-diferencial">
+                <div class="card-diferencial-header">
+                  <div class="card-diferencial-icone">💳</div>
+                  <h3 class="card-diferencial-titulo">PLANOS FLEXÍVEIS</h3>
+                </div>
+                <p class="card-diferencial-texto">
+                  Do formato mais simples ao mais completo, ajusto tudo para que caiba no seu orçamento e no seu sonho. No pacote premium, ainda ofereço bônus exclusivos que tornam sua celebração memorável.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="card-diferencial">
+                <div class="card-diferencial-header">
+                  <div class="card-diferencial-icone">⭐</div>
+                  <h3 class="card-diferencial-titulo">QUASE 20 ANOS DE PALCO</h3>
+                </div>
+                <p class="card-diferencial-texto">
+                  Há quase 20 anos me dedico à música ao vivo, levando canções e boas lembranças a diferentes eventos e públicos.
+                </p>
+              </div>
+            </li>
+          </ul>
         </div>
-    </section>
+        <div class="coluna-eventos">
+          <h2 class="titulo-secao-diferenciais">EVENTOS</h2>
+          <div class="grid-eventos">
+            <div class="item-evento">
+              <div class="item-evento-icone">🎂</div>
+              <p class="item-evento-label">Aniversários</p>
+            </div>
+            <div class="item-evento">
+              <div class="item-evento-icone">💼</div>
+              <p class="item-evento-label">Eventos corporativos</p>
+            </div>
+            <div class="item-evento">
+              <div class="item-evento-icone">💖</div>
+              <p class="item-evento-label">Casamentos e bodas</p>
+            </div>
+            <div class="item-evento">
+              <div class="item-evento-icone">👶</div>
+              <p class="item-evento-label">Chás de bebê e revelação</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section id="shows" class="py-20 bg-gray-50">
     <div class="container mx-auto px-6">
@@ -409,7 +290,6 @@
         </h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Escolha o formato ideal para o seu evento e transforme sua ocasião em um momento inesquecível</p>
       </div>
-
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl shadow-xl overflow-hidden transform transition-all hover:scale-105">
           <div class="p-8 text-white">
@@ -424,18 +304,9 @@
               Perfeito para momentos que exigem sofisticação e um clima mais reservado.
             </p>
             <ul class="mb-8 space-y-3">
-              <li class="flex items-center">
-                <i class="fas fa-check-circle mr-2 opacity-90"></i>
-                <span>Repertório eclético</span>
-              </li>
-              <li class="flex items-center">
-                <i class="fas fa-check-circle mr-2 opacity-90"></i>
-                <span>Som ambiente</span>
-              </li>
-              <li class="flex items-center">
-                <i class="fas fa-check-circle mr-2 opacity-90"></i>
-                <span>Clima agradável e elegante</span>
-              </li>
+              <li class="flex items-center"><i class="fas fa-check-circle mr-2 opacity-90"></i><span>Repertório eclético</span></li>
+              <li class="flex items-center"><i class="fas fa-check-circle mr-2 opacity-90"></i><span>Som ambiente</span></li>
+              <li class="flex items-center"><i class="fas fa-check-circle mr-2 opacity-90"></i><span>Clima agradável e elegante</span></li>
             </ul>
             <div class="bg-white bg-opacity-20 p-4 rounded-lg">
               <h4 class="font-bold mb-2">Ocasiões ideais:</h4>
@@ -443,7 +314,6 @@
             </div>
           </div>
         </div>
-
         <div class="bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl shadow-xl overflow-hidden transform transition-all hover:scale-105">
           <div class="p-8 text-white">
             <div class="flex items-center mb-6">
@@ -456,18 +326,9 @@
               Quer um show mais animado? Esse é o formato perfeito para o seu evento, um show energético e animado, passando por todos os ritmos cantando os maiores sucesos.
             </p>
             <ul class="mb-8 space-y-3">
-              <li class="flex items-center">
-                <i class="fas fa-check-circle mr-2 opacity-90"></i>
-                <span>Repertório animado</span>
-              </li>
-              <li class="flex items-center">
-                <i class="fas fa-check-circle mr-2 opacity-90"></i>
-                <span>Interação com o público</span>
-              </li>
-              <li class="flex items-center">
-                <i class="fas fa-check-circle mr-2 opacity-90"></i>
-                <span>Um show para ninguém ficar parado</span>
-              </li>
+              <li class="flex items-center"><i class="fas fa-check-circle mr-2 opacity-90"></i><span>Repertório animado</span></li>
+              <li class="flex items-center"><i class="fas fa-check-circle mr-2 opacity-90"></i><span>Interação com o público</span></li>
+              <li class="flex items-center"><i class="fas fa-check-circle mr-2 opacity-90"></i><span>Um show para ninguém ficar parado</span></li>
             </ul>
             <div class="bg-white bg-opacity-20 p-4 rounded-lg">
               <h4 class="font-bold mb-2">Ocasiões ideais:</h4>
@@ -479,7 +340,6 @@
     </div>
   </section>
 
-  <!-- Seção de Vídeos -->
   <section id="videos" class="py-20 bg-[#c3ada6]">
     <div class="container mx-auto px-6">
       <div class="text-center mb-16">
@@ -488,10 +348,7 @@
         </h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Confira alguns momentos dos shows de Isaque Assis</p>
       </div>
-
-      <!-- O grid agora contém 6 vídeos -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Vídeo 1 -->
         <div class="video-container bg-white rounded-xl overflow-hidden shadow-md">
           <div class="aspect-w-16 aspect-h-9">
             <iframe class="w-full h-64" src="https://youtube.com/embed/RW0hzQV2q3s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
@@ -501,44 +358,24 @@
             <p class="text-gray-600 text-sm">Ao vivo em Trancoso - Bahia</p>
           </div>
         </div>
-
-        <!-- Vídeo 2 -->
         <div class="video-container bg-white rounded-xl overflow-hidden shadow-md">
-  <div class="aspect-w-16 aspect-h-9">
-    <iframe 
-      class="w-full h-64" 
-      src="https://player.vimeo.com/video/1118431681?badge=0&autopause=0&player_id=0&app_id=58479" 
-      frameborder="0" 
-      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-      title="Te devoro - Voz e violão ao vivo"
-      loading="lazy">
-    </iframe>
-  </div>
-  <div class="p-6">
-    <h3 class="font-bold text-lg text-gray-800 mb-2">Mpb - Voz e Violão</h3>
-    <p class="text-gray-600 text-sm">Festa de aniversário</p>
-  </div>
-</div>
-
-        <!-- Vídeo 3 -->
+          <div class="aspect-w-16 aspect-h-9">
+            <iframe class="w-full h-64" src="https://player.vimeo.com/video/1118431681?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Te devoro - Voz e violão ao vivo" loading="lazy"></iframe>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-lg text-gray-800 mb-2">Mpb - Voz e Violão</h3>
+            <p class="text-gray-600 text-sm">Festa de aniversário</p>
+          </div>
+        </div>
         <div class="video-container bg-white rounded-xl overflow-hidden shadow-md">
-  <div class="aspect-w-16 aspect-h-9">
-    <iframe 
-      class="w-full h-64" 
-      src="https://player.vimeo.com/video/1118527686?badge=0&autopause=0&player_id=0&app_id=58479" 
-      frameborder="0" 
-      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-      title="Conselho - Voz, violão e Cajon em Trancoso Bahia"
-      loading="lazy">
-    </iframe>
-  </div>
-  <div class="p-6">
-    <h3 class="font-bold text-lg text-gray-800 mb-2">Samba - Voz, violão e Cajon</h3>
-    <p class="text-gray-600 text-sm">Ao vivo em Trancoso - Bahia</p>
-  </div>
-</div>
-
-        <!-- Vídeo 4 -->
+          <div class="aspect-w-16 aspect-h-9">
+            <iframe class="w-full h-64" src="https://player.vimeo.com/video/1118527686?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Conselho - Voz, violão e Cajon em Trancoso Bahia" loading="lazy"></iframe>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-lg text-gray-800 mb-2">Samba - Voz, violão e Cajon</h3>
+            <p class="text-gray-600 text-sm">Ao vivo em Trancoso - Bahia</p>
+          </div>
+        </div>
         <div class="video-container bg-white rounded-xl overflow-hidden shadow-md">
           <div class="aspect-w-16 aspect-h-9">
             <iframe class="w-full h-64" src="https://www.youtube.com/embed/5xrl4zFJz5c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -548,45 +385,28 @@
             <p class="text-gray-600 text-sm">Aniversário de 80 anos</p>
           </div>
         </div>
-
-        <!-- Vídeo 5 -->
         <div class="video-container bg-white rounded-xl overflow-hidden shadow-md">
-  <div class="aspect-w-16 aspect-h-9">
-    <iframe 
-      class="w-full h-64" 
-      src="https://player.vimeo.com/video/1118551237?badge=0&autopause=0&player_id=0&app_id=58479" 
-      frameborder="0" 
-      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-      title="Pagode - Teclado e Voz"
-      loading="lazy">
-    </iframe>
-  </div>
-  <div class="p-6">
-    <h3 class="font-bold text-lg text-gray-800 mb-2">Pagode - Voz e Teclado</h3>
-    <p class="text-gray-600 text-sm">Festa de aniversário</p>
-  </div>
-</div>
-
-        <!-- Vídeo 6 -->
+          <div class="aspect-w-16 aspect-h-9">
+            <iframe class="w-full h-64" src="https://player.vimeo.com/video/1118551237?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Pagode - Teclado e Voz" loading="lazy"></iframe>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-lg text-gray-800 mb-2">Pagode - Voz e Teclado</h3>
+            <p class="text-gray-600 text-sm">Festa de aniversário</p>
+          </div>
+        </div>
         <div class="video-container bg-white rounded-xl overflow-hidden shadow-md">
-  <div class="aspect-w-16 aspect-h-9">
-    <iframe 
-      class="w-full h-64" 
-      src="https://player.vimeo.com/video/1118569005?badge=0&autopause=0&player_id=0&app_id=58479" 
-      frameborder="0" 
-      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-      title="Sinônimos - Voz e teclado"
-      loading="lazy">
-    </iframe>
-  </div>
-  <div class="p-6">
-    <h3 class="font-bold text-lg text-gray-800 mb-2">Mpb - Voz e teclado</h3>
-    <p class="text-gray-600 text-sm">Voz e teclado</p>
-  </div>
-</div>
+          <div class="aspect-w-16 aspect-h-9">
+            <iframe class="w-full h-64" src="https://player.vimeo.com/video/1118569005?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Sinônimos - Voz e teclado" loading="lazy"></iframe>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-lg text-gray-800 mb-2">Mpb - Voz e teclado</h3>
+            <p class="text-gray-600 text-sm">Voz e teclado</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-<!-- Depoimentos -->
   <section id="depoimentos" class="py-20 bg-gray-50">
     <div class="container mx-auto px-6">
       <div class="text-center mb-16">
@@ -595,7 +415,6 @@
         </h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">O que dizem quem já contratou os shows de Isaque Assis</p>
       </div>
-
       <div class="max-w-4xl mx-auto relative h-96 overflow-hidden">
         <div class="testimonial-card active p-8 bg-white rounded-xl shadow-md">
           <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
@@ -610,7 +429,6 @@
             </div>
           </div>
         </div>
-
         <div class="testimonial-card p-8 bg-white rounded-xl shadow-md">
           <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
             <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Depoimento de Ricardo" class="w-20 h-20 rounded-full object-cover shadow-md">
@@ -624,7 +442,6 @@
             </div>
           </div>
         </div>
-
         <div class="testimonial-card p-8 bg-white rounded-xl shadow-md">
           <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
             <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Depoimento de Fernanda" class="w-20 h-20 rounded-full object-cover shadow-md">
@@ -638,7 +455,6 @@
             </div>
           </div>
         </div>
-        
         <div class="testimonial-card p-8 bg-white rounded-xl shadow-md">
           <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
             <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Depoimento de Patrícia" class="w-20 h-20 rounded-full object-cover shadow-md">
@@ -653,7 +469,6 @@
           </div>
         </div>
       </div>
-
       <div class="flex justify-center mt-8 gap-2">
         <button onclick="showTestimonial(0)" class="w-3 h-3 rounded-full bg-blue-500 focus:outline-none testimonial-dot active"></button>
         <button onclick="showTestimonial(1)" class="w-3 h-3 rounded-full bg-gray-300 focus:outline-none testimonial-dot"></button>
@@ -661,9 +476,8 @@
         <button onclick="showTestimonial(3)" class="w-3 h-3 rounded-full bg-gray-300 focus:outline-none testimonial-dot"></button>
       </div>
     </div>
-</section>
+  </section>
 
-<!-- Formulário de contato -->
   <section id="contato" class="py-20 bg-gradient-to-r from-blue-900 to-purple-900 text-white">
     <div class="container mx-auto px-6">
       <div class="text-center mb-16">
@@ -672,96 +486,64 @@
         </h2>
         <p class="text-blue-100 mt-4 max-w-2xl mx-auto">Preencha o formulário abaixo e entrarei em contato<br>para detalharmos a sua proposta</p>
       </div>
-
       <div class="max-w-2xl mx-auto bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-8 shadow-lg">
         <form id="contactForm" class="space-y-6">
-  <div>
-    <label for="name" class="block text-sm font-medium text-blue-100 mb-1">Nome</label>
-    <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent placeholder-blue-200 transition-colors duration-200">
-  </div>
-
-  <div>
-    <label for="phone" class="block text-sm font-medium text-blue-100 mb-1">Telefone (WhatsApp)</label>
-    <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent placeholder-blue-200">
-  </div>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div>
-      <label for="date" class="block text-sm font-medium text-blue-100 mb-1">Data do evento</label>
-      <input type="date" id="date" name="date" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent placeholder-blue-200">
-    </div>
-    <div>
-      <label for="time" class="block text-sm font-medium text-blue-100 mb-1">Horário</label>
-      <input type="time" id="time" name="time" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent placeholder-blue-200">
-    </div>
-  </div>
-
-  <div>
-    <label for="bairro" class="block text-sm font-medium text-blue-100 mb-1">Bairro do evento</label>
-    <input type="text" id="bairro" name="bairro" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent placeholder-blue-200">
-  </div>
-
-  <div>
-    <label for="people" class="block text-sm font-medium text-blue-100 mb-1">Evento para quantas pessoas?</label>
-    <input type="number" id="people" name="people" min="1" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent placeholder-blue-200">
-  </div>
-
-  <div>
-    <label class="block text-sm font-medium text-blue-100 mb-2">Estilos musicais preferidos</label>
-    <div class="space-y-2 p-4 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30">
-      <div class="flex items-center">
-        <input id="select-all-styles" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-        <label for="select-all-styles" class="ml-3 block text-sm font-medium text-white">Selecionar todos</label>
-      </div>
-      <hr class="border-white/20">
-      <div class="grid grid-cols-2 gap-2 pt-2">
-        <div class="flex items-center">
-          <input id="style-mpb" name="music_style" value="MPB" type="checkbox" class="style-checkbox h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-          <label for="style-mpb" class="ml-3 block text-sm text-blue-100">MPB</label>
-        </div>
-        <div class="flex items-center">
-          <input id="style-samba" name="music_style" value="Samba" type="checkbox" class="style-checkbox h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-          <label for="style-samba" class="ml-3 block text-sm text-blue-100">Samba</label>
-        </div>
-        <div class="flex items-center">
-          <input id="style-pagode" name="music_style" value="Pagode" type="checkbox" class="style-checkbox h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-          <label for="style-pagode" class="ml-3 block text-sm text-blue-100">Pagode</label>
-        </div>
-        <div class="flex items-center">
-          <input id="style-sertanejo" name="music_style" value="Sertanejo" type="checkbox" class="style-checkbox h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-          <label for="style-sertanejo" class="ml-3 block text-sm text-blue-100">Sertanejo</label>
-        </div>
-        <div class="flex items-center">
-          <input id="style-forro" name="music_style" value="Forró" type="checkbox" class="style-checkbox h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-          <label for="style-forro" class="ml-3 block text-sm text-blue-100">Forró</label>
-        </div>
-        <div class="flex items-center">
-          <input id="style-piseiro" name="music_style" value="Piseiro" type="checkbox" class="style-checkbox h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-          <label for="style-piseiro" class="ml-3 block text-sm text-blue-100">Piseiro</label>
-        </div>
-        <div class="flex items-center">
-          <input id="style-rock" name="music_style" value="Rock Nacional" type="checkbox" class="style-checkbox h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-          <label for="style-rock" class="ml-3 block text-sm text-blue-100">Rock Nacional</label>
-        </div>
-        <div class="flex items-center">
-          <input id="style-reggae" name="music_style" value="Reggae" type="checkbox" class="style-checkbox h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-          <label for="style-reggae" class="ml-3 block text-sm text-blue-100">Reggae</label>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div>
-    <label for="message" class="block text-sm font-medium text-blue-100 mb-1">Mensagem adicional</label>
-    <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent placeholder-blue-200"></textarea>
-  </div>
-
-  <div class="pt-4">
-    <button type="submit" class="w-full bg-gradient-to-r from-blue-400 to-purple-500 hover:from-blue-500 hover:to-purple-600 text-white font-bold py-4 px-6 rounded-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
-      Solicitar Orçamento via WhatsApp
-    </button>
-  </div>
-</form>
+          <div>
+            <label for="name" class="block text-sm font-medium text-blue-100 mb-1">Nome</label>
+            <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent placeholder-blue-200 transition-colors duration-200">
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-medium text-blue-100 mb-1">Telefone (WhatsApp)</label>
+            <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent placeholder-blue-200">
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="date" class="block text-sm font-medium text-blue-100 mb-1">Data do evento</label>
+              <input type="date" id="date" name="date" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent placeholder-blue-200">
+            </div>
+            <div>
+              <label for="time" class="block text-sm font-medium text-blue-100 mb-1">Horário</o>
+              <input type="time" id="time" name="time" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent placeholder-blue-200">
+            </div>
+          </div>
+          <div>
+            <label for="bairro" class="block text-sm font-medium text-blue-100 mb-1">Bairro do evento</label>
+            <input type="text" id="bairro" name="bairro" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent placeholder-blue-200">
+          </div>
+          <div>
+            <label for="people" class="block text-sm font-medium text-blue-100 mb-1">Evento para quantas pessoas?</label>
+            <input type="number" id="people" name="people" min="1" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent placeholder-blue-200">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-blue-100 mb-2">Estilos musicais preferidos</label>
+            <div class="space-y-2 p-4 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30">
+              <div class="flex items-center">
+                <input id="select-all-styles" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                <label for="select-all-styles" class="ml-3 block text-sm font-medium text-white">Selecionar todos</label>
+              </div>
+              <hr class="border-white/20">
+              <div class="grid grid-cols-2 gap-2 pt-2">
+                <div class="flex items-center"><input id="style-mpb" name="music_style" value="MPB" type="checkbox" class="style-checkbox h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"><label for="style-mpb" class="ml-3 block text-sm text-blue-100">MPB</label></div>
+                <div class="flex items-center"><input id="style-samba" name="music_style" value="Samba" type="checkbox" class="style-checkbox h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"><label for="style-samba" class="ml-3 block text-sm text-blue-100">Samba</label></div>
+                <div class="flex items-center"><input id="style-pagode" name="music_style" value="Pagode" type="checkbox" class="style-checkbox h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"><label for="style-pagode" class="ml-3 block text-sm text-blue-100">Pagode</label></div>
+                <div class="flex items-center"><input id="style-sertanejo" name="music_style" value="Sertanejo" type="checkbox" class="style-checkbox h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"><label for="style-sertanejo" class="ml-3 block text-sm text-blue-100">Sertanejo</label></div>
+                <div class="flex items-center"><input id="style-forro" name="music_style" value="Forró" type="checkbox" class="style-checkbox h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"><label for="style-forro" class="ml-3 block text-sm text-blue-100">Forró</label></div>
+                <div class="flex items-center"><input id="style-piseiro" name="music_style" value="Piseiro" type="checkbox" class="style-checkbox h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"><label for="style-piseiro" class="ml-3 block text-sm text-blue-100">Piseiro</label></div>
+                <div class="flex items-center"><input id="style-rock" name="music_style" value="Rock Nacional" type="checkbox" class="style-checkbox h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"><label for="style-rock" class="ml-3 block text-sm text-blue-100">Rock Nacional</label></div>
+                <div class="flex items-center"><input id="style-reggae" name="music_style" value="Reggae" type="checkbox" class="style-checkbox h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"><label for="style-reggae" class="ml-3 block text-sm text-blue-100">Reggae</label></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-blue-100 mb-1">Mensagem adicional</label>
+            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent placeholder-blue-200"></textarea>
+          </div>
+          <div class="pt-4">
+            <button type="submit" class="w-full bg-gradient-to-r from-blue-400 to-purple-500 hover:from-blue-500 hover:to-purple-600 text-white font-bold py-4 px-6 rounded-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+              Solicitar Orçamento via WhatsApp
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </section>
@@ -773,28 +555,25 @@
           <h2 class="text-2xl font-bold">Isaque Assis</h2>
           <p class="text-gray-400 mt-2">Música que transforma momentos</p>
         </div>
-
         <div class="flex space-x-6">
-          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+          <a href="https://www.facebook.com/profile.php?id=61552790302202&locale=pt_BR" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
             <i class="fab fa-facebook-f text-xl"></i>
           </a>
-          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+          <a href="https://www.instagram.com/isaqcantor/#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
             <i class="fab fa-instagram text-xl"></i>
           </a>
-          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+          <a href="https://www.youtube.com/@isaquecantor" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
             <i class="fab fa-youtube text-xl"></i>
           </a>
-          <a href="https://wa.me/5511999999999?text=Olá%20Isaque,%20quero%20um%20orçamento%20para%20meu%20evento!" class="text-gray-400 hover:text-white transition-colors">
+          <a href="https://wa.me/5521964315534?text=Ol%C3%A1%20Isaque,%20quero%20um%20or%C3%A7amento%20para%20meu%20evento!" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
             <i class="fab fa-whatsapp text-xl"></i>
           </a>
         </div>
       </div>
-
       <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
         <p class="text-gray-400 text-sm mb-4 md:mb-0">
-          © 2023 Isaque Assis. Todos os direitos reservados.
+          © 2025 Isaque Assis. Todos os direitos reservados.
         </p>
-
         <div class="flex space-x-6">
           <a href="#sobre" class="text-gray-400 hover:text-white text-sm transition-colors">Sobre</a>
           <a href="#shows" class="text-gray-400 hover:text-white text-sm transition-colors">Shows</a>
@@ -806,7 +585,7 @@
     </div>
   </footer>
 
-  <<script>
+<script>
   // ----- Lógica do Carrossel de Depoimentos (permanece a mesma) -----
   let currentTestimonial = 0;
   const testimonials = document.querySelectorAll('.testimonial-card');
@@ -927,3 +706,5 @@ ${mensagemAdicional || 'Nenhuma'}
     });
   });
 </script>
+</body>
+</html>
