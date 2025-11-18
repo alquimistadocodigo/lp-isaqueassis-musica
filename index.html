@@ -105,14 +105,35 @@
         }
 
         /* Define a imagem de fundo para a seção Hero */
+    .hero {
+      background-image: url('https://ik.imagekit.io/4f8egcxn0/Foto%20Perfil%20Teclado%20e%20Voz%202025-min.jpg?updatedAt=1754773053422');
+      background-size: cover;
+      background-position: center; /* Posição padrão para mobile */
+      background-repeat: no-repeat;
+      background-color: #1a202c; /* Cor de fallback caso a imagem não carregue */
+    }
+
+    /* NOVO: Ajusta a posição da imagem de fundo para desktop (>= 768px) */
+    @media (min-width: 768px) {
         .hero {
-            background-image: url('https://ik.imagekit.io/4f8egcxn0/Foto%20Perfil%20Viola%CC%83o%20e%20Voz%202025-min.jpg?updatedAt=1754773052249');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: #1a202c;
-            /* Cor de fallback caso a imagem não carregue */
+            /* Alinha a imagem pelo topo para garantir que o rosto não seja cortado */
+            background-position: top; 
         }
+    }
+    
+    /* Outros estilos de ajuste de altura do hero (mantidos) */
+    .hero {
+        /* Padrão para telas maiores/desktop */
+        min-height: 100vh;
+    }
+
+    @media (max-width: 768px) {
+        /* Altura otimizada para celular */
+        .hero {
+            min-height: 70vh; /* Mantido o valor anterior do mobile */
+            /* Usaremos padding-top da div interna para posicionar */
+        }
+    }
 
         /* --- ESTILOS PARA A SEÇÃO DIFERENCIAIS (MOVIDO PARA CÁ) --- */
         :root {
